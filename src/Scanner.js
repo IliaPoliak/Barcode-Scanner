@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BrowserMultiFormatReader } from "@zxing/library";
 
 const Scanner = () => {
@@ -28,7 +28,20 @@ const Scanner = () => {
     };
   }, [videoRef]);
 
-  return <video className="w-screen h-screen object-cover" ref={videoRef} />;
+  return (
+    <div className="fixed inset-0 flex items-end justify-center">
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        ref={videoRef}
+      />
+      <Link
+        className="relative z-10 text-white bg-red-600 px-5 pt-3 pb-4 m-[5vh] rounded-3xl font-bold  hover:bg-red-700  active:shadow-2xl"
+        to="/"
+      >
+        Stop Scanning
+      </Link>
+    </div>
+  );
 };
 
 export default Scanner;
