@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Scanner from "./Scanner";
-import Item from "./Item";
-import Home from "./Home";
+import Scanner from "./Components/Scanner";
+import Item from "./Components/Item";
+import Home from "./Components/Home";
 
 const App = () => {
   return (
