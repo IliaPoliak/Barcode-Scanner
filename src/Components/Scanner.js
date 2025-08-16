@@ -35,7 +35,7 @@ const Scanner = () => {
         ref={videoRef}
       />
       <Link
-        className="relative z-10 text-white bg-red-600 px-5 pt-3 pb-4 m-[5vh] rounded-3xl font-bold  hover:bg-red-700  active:shadow-2xl"
+        className="relative z-10 text-white bg-red-600 px-5 py-3 m-[5vh] rounded-3xl font-bold  hover:bg-red-700  active:shadow-2xl"
         to="/"
       >
         Stop Scanning
