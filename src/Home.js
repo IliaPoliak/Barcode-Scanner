@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="flex items-end justify-center h-screen">
+    <div className="flex items-end justify-center min-h-screen">
       <Link
         className="text-white bg-green-600 px-5 pt-3 pb-4 m-[5vh] rounded-3xl font-bold  hover:bg-green-700  active:shadow-2xl"
         to="/scan"
