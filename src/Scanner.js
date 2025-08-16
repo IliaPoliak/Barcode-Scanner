@@ -28,7 +28,7 @@ const Scanner = () => {
     };
   }, [videoRef]);
 
-  return <video ref={videoRef} />;
+  return <video className="w-screen h-screen object-cover" ref={videoRef} />;
 };
 
 export default Scanner;
