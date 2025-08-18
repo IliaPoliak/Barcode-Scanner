@@ -38,34 +38,39 @@ const Item = () => {
         Scan Another Item
       </Link>
 
+      {/* Loading */}
       {loading && !error && !data && <div>Loading...</div>}
 
+      {/* Error */}
       {error && !loading && !data && <div>Error: {error}</div>}
 
+      {/* No Data */}
       {(!data || data.status_verbose === "product not found") &&
         !loading &&
         !error && <div>No data</div>}
 
+      {/* Data */}
       {data &&
         data.status_verbose === "product found" &&
         !loading &&
         !error && (
           <div className="flex items-center justify-center flex-col">
+            {/* Brand */}
             <p>{data.product.brands}</p>
+
+            {/* Product Name */}
             <p>{data.product.product_name}</p>
+
+            {/* Quantity */}
             <p>
               {data.product.product_quantity}{" "}
               {data.product.product_quantity_unit}
             </p>
 
-            {/* if no product_quantity */}
-            {/*<p>
-              {data.product.serving_quantity}{" "}
-              {data.product.serving_quantity_unit}
-            </p>*/}
-
+            {/* Product Photo */}
             <img src={data.product.image_url}></img>
 
+            {/* Alergens */}
             <p className="font-bold mt-10">Alergens:</p>
             {data.product.allergens_hierarchy &&
             data.product.allergens_hierarchy.length > 0 ? (
@@ -78,6 +83,7 @@ const Item = () => {
               <p>No alergens found</p>
             )}
 
+            {/* Tags */}
             <p className="font-bold mt-10">Tags:</p>
             {data.product.ingredients_analysis_tags &&
             data.product.ingredients_analysis_tags.length > 0 ? (
@@ -90,82 +96,101 @@ const Item = () => {
               <p>No tags found</p>
             )}
 
+            {/* Nutriments */}
             <p className="font-bold mt-10">
               Nutriments per {data.product.nutrition_data_prepared_per}
             </p>
 
+            {/* Energy (kcal) */}
             {data.product.nutriments["energy-kcal_100g"] !== undefined &&
               data.product.nutriments["energy-kcal_unit"] !== undefined && (
                 <p>
-                  Energy: {data.product.nutriments["energy-kcal_100g"]}{" "}
+                  Energy:{" "}
+                  {parseFloat(
+                    data.product.nutriments["energy-kcal_100g"].toFixed(1)
+                  )}{" "}
                   {data.product.nutriments["energy-kcal_unit"]}
                 </p>
               )}
 
+            {/* Fat */}
             {data.product.nutriments.fat_100g !== undefined &&
               data.product.nutriments.fat_unit !== undefined && (
                 <p>
-                  Fat: {data.product.nutriments.fat_100g}{" "}
+                  Fat: {parseFloat(data.product.nutriments.fat_100g.toFixed(1))}{" "}
                   {data.product.nutriments.fat_unit}
                 </p>
               )}
 
+            {/* Saturated Fat */}
             {data.product.nutriments["saturated-fat_100g"] !== undefined &&
               data.product.nutriments["saturated-fat_unit"] !== undefined && (
                 <p>
-                  Saturated Fat: {data.product.nutriments["saturated-fat_100g"]}{" "}
+                  Saturated Fat:{" "}
+                  {parseFloat(
+                    data.product.nutriments["saturated-fat_100g"].toFixed(1)
+                  )}{" "}
                   {data.product.nutriments["saturated-fat_unit"]}
                 </p>
               )}
-
+            {/* Carbohydrates */}
             {data.product.nutriments.carbohydrates_100g !== undefined &&
               data.product.nutriments.carbohydrates_unit !== undefined && (
                 <p>
-                  Carbohydrates: {data.product.nutriments.carbohydrates_100g}{" "}
+                  Carbohydrates:{" "}
+                  {parseFloat(
+                    data.product.nutriments.carbohydrates_100g.toFixed(1)
+                  )}{" "}
                   {data.product.nutriments.carbohydrates_unit}
                 </p>
               )}
-
+            {/* Sugars */}
             {data.product.nutriments.sugars_100g !== undefined &&
               data.product.nutriments.sugars_unit !== undefined && (
                 <p>
-                  Sugars: {data.product.nutriments.sugars_100g}{" "}
+                  Sugars:{" "}
+                  {parseFloat(data.product.nutriments.sugars_100g.toFixed(1))}{" "}
                   {data.product.nutriments.sugars_unit}
                 </p>
               )}
-
+            {/* Proteins */}
             {data.product.nutriments.proteins_100g !== undefined &&
               data.product.nutriments.proteins_unit !== undefined && (
                 <p>
-                  Proteins: {data.product.nutriments.proteins_100g}{" "}
+                  Proteins:{" "}
+                  {parseFloat(data.product.nutriments.proteins_100g.toFixed(1))}{" "}
                   {data.product.nutriments.proteins_unit}
                 </p>
               )}
-
+            {/* Fiber */}
             {data.product.nutriments.fiber_100g !== undefined &&
               data.product.nutriments.fiber_unit !== undefined && (
                 <p>
-                  Fiber: {data.product.nutriments.fiber_100g}{" "}
+                  Fiber:{" "}
+                  {parseFloat(data.product.nutriments.fiber_100g.toFixed(1))}{" "}
                   {data.product.nutriments.fiber_unit}
                 </p>
               )}
-
+            {/* Salt */}
             {data.product.nutriments.salt_100g !== undefined &&
               data.product.nutriments.salt_unit !== undefined && (
                 <p>
-                  Salt: {data.product.nutriments.salt_100g}{" "}
+                  Salt:{" "}
+                  {parseFloat(data.product.nutriments.salt_100g.toFixed(1))}{" "}
                   {data.product.nutriments.salt_unit}
                 </p>
               )}
-
+            {/* Sodium */}
             {data.product.nutriments.sodium_100g !== undefined &&
               data.product.nutriments.sodium_unit !== undefined && (
                 <p>
-                  Sodium: {data.product.nutriments.sodium_100g}{" "}
+                  Sodium:{" "}
+                  {parseFloat(data.product.nutriments.sodium_100g.toFixed(1))}{" "}
                   {data.product.nutriments.sodium_unit}
                 </p>
               )}
 
+            {/* Ingredients */}
             {/*<p className="font-bold">Ingredients:</p>
             {data.product.ingredients_hierarchy &&
             data.product.ingredients_hierarchy.length > 0 ? (
