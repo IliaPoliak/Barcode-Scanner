@@ -58,9 +58,17 @@ const Item = () => {
               {data.product.product_quantity_unit}
             </p>
 
+            {/* if no product_quantity */}
+            {/*<p>
+              {data.product.serving_quantity}{" "}
+              {data.product.serving_quantity_unit}
+            </p>*/}
+
             <img src={data.product.image_url}></img>
 
-            <p className="font-bold">Nutriments per 100g</p>
+            <p className="font-bold">
+              Nutriments per {data.product.nutrition_data_per}
+            </p>
             <p>
               Energy: {data.product.nutriments["energy-kcal_100g"]}{" "}
               {data.product.nutriments["energy-kcal_unit"]}
