@@ -66,95 +66,7 @@ const Item = () => {
 
             <img src={data.product.image_url}></img>
 
-            <p className="font-bold">
-              Nutriments per {data.product.nutrition_data_prepared_per}
-            </p>
-
-            {data.product.nutriments["energy-kcal_100g"] &&
-              data.product.nutriments["energy-kcal_unit"] && (
-                <p>
-                  Energy: {data.product.nutriments["energy-kcal_100g"]}{" "}
-                  {data.product.nutriments["energy-kcal_unit"]}
-                </p>
-              )}
-
-            {data.product.nutriments.fat_100g &&
-              data.product.nutriments.fat_unit && (
-                <p>
-                  Fat: {data.product.nutriments.fat_100g}{" "}
-                  {data.product.nutriments.fat_unit}
-                </p>
-              )}
-
-            {data.product.nutriments["saturated-fat_100g"] &&
-              data.product.nutriments["saturated-fat_unit"] && (
-                <p>
-                  Saturated Fat: {data.product.nutriments["saturated-fat_100g"]}{" "}
-                  {data.product.nutriments["saturated-fat_unit"]}
-                </p>
-              )}
-
-            {data.product.nutriments.carbohydrates_100g &&
-              data.product.nutriments.carbohydrates_unit && (
-                <p>
-                  Carbohydrates: {data.product.nutriments.carbohydrates_100g}{" "}
-                  {data.product.nutriments.carbohydrates_unit}
-                </p>
-              )}
-
-            {data.product.nutriments.sugars_100g &&
-              data.product.nutriments.sugars_unit && (
-                <p>
-                  Sugars: {data.product.nutriments.sugars_100g}{" "}
-                  {data.product.nutriments.sugars_unit}
-                </p>
-              )}
-
-            {data.product.nutriments.proteins_100g &&
-              data.product.nutriments.proteins_unit && (
-                <p>
-                  Proteins: {data.product.nutriments.proteins_100g}{" "}
-                  {data.product.nutriments.proteins_unit}
-                </p>
-              )}
-
-            {data.product.nutriments.fiber_100g &&
-              data.product.nutriments.fiber_unit && (
-                <p>
-                  Fiber: {data.product.nutriments.fiber_100g}{" "}
-                  {data.product.nutriments.fiber_unit}
-                </p>
-              )}
-
-            {data.product.nutriments.salt_100g &&
-              data.product.nutriments.salt_unit && (
-                <p>
-                  Salt: {data.product.nutriments.salt_100g}{" "}
-                  {data.product.nutriments.salt_unit}
-                </p>
-              )}
-
-            {data.product.nutriments.sodium_100g &&
-              data.product.nutriments.sodium_unit && (
-                <p>
-                  Sodium: {data.product.nutriments.sodium_100g}{" "}
-                  {data.product.nutriments.sodium_unit}
-                </p>
-              )}
-
-            <p className="font-bold">Ingredients:</p>
-            {data.product.ingredients_hierarchy &&
-            data.product.ingredients_hierarchy.length > 0 ? (
-              <p>
-                {data.product.ingredients_hierarchy.map((element) => {
-                  return <p>{element}</p>;
-                })}
-              </p>
-            ) : (
-              <p>No ingredients found</p>
-            )}
-
-            <p className="font-bold">Alergens:</p>
+            <p className="font-bold mt-10">Alergens:</p>
             {data.product.allergens_hierarchy &&
             data.product.allergens_hierarchy.length > 0 ? (
               <p>
@@ -166,7 +78,7 @@ const Item = () => {
               <p>No alergens found</p>
             )}
 
-            <p className="font-bold">Tags:</p>
+            <p className="font-bold mt-10">Tags:</p>
             {data.product.ingredients_analysis_tags &&
             data.product.ingredients_analysis_tags.length > 0 ? (
               <p>
@@ -177,6 +89,94 @@ const Item = () => {
             ) : (
               <p>No tags found</p>
             )}
+
+            <p className="font-bold mt-10">
+              Nutriments per {data.product.nutrition_data_prepared_per}
+            </p>
+
+            {data.product.nutriments["energy-kcal_100g"] !== undefined &&
+              data.product.nutriments["energy-kcal_unit"] !== undefined && (
+                <p>
+                  Energy: {data.product.nutriments["energy-kcal_100g"]}{" "}
+                  {data.product.nutriments["energy-kcal_unit"]}
+                </p>
+              )}
+
+            {data.product.nutriments.fat_100g !== undefined &&
+              data.product.nutriments.fat_unit !== undefined && (
+                <p>
+                  Fat: {data.product.nutriments.fat_100g}{" "}
+                  {data.product.nutriments.fat_unit}
+                </p>
+              )}
+
+            {data.product.nutriments["saturated-fat_100g"] !== undefined &&
+              data.product.nutriments["saturated-fat_unit"] !== undefined && (
+                <p>
+                  Saturated Fat: {data.product.nutriments["saturated-fat_100g"]}{" "}
+                  {data.product.nutriments["saturated-fat_unit"]}
+                </p>
+              )}
+
+            {data.product.nutriments.carbohydrates_100g !== undefined &&
+              data.product.nutriments.carbohydrates_unit !== undefined && (
+                <p>
+                  Carbohydrates: {data.product.nutriments.carbohydrates_100g}{" "}
+                  {data.product.nutriments.carbohydrates_unit}
+                </p>
+              )}
+
+            {data.product.nutriments.sugars_100g !== undefined &&
+              data.product.nutriments.sugars_unit !== undefined && (
+                <p>
+                  Sugars: {data.product.nutriments.sugars_100g}{" "}
+                  {data.product.nutriments.sugars_unit}
+                </p>
+              )}
+
+            {data.product.nutriments.proteins_100g !== undefined &&
+              data.product.nutriments.proteins_unit !== undefined && (
+                <p>
+                  Proteins: {data.product.nutriments.proteins_100g}{" "}
+                  {data.product.nutriments.proteins_unit}
+                </p>
+              )}
+
+            {data.product.nutriments.fiber_100g !== undefined &&
+              data.product.nutriments.fiber_unit !== undefined && (
+                <p>
+                  Fiber: {data.product.nutriments.fiber_100g}{" "}
+                  {data.product.nutriments.fiber_unit}
+                </p>
+              )}
+
+            {data.product.nutriments.salt_100g !== undefined &&
+              data.product.nutriments.salt_unit !== undefined && (
+                <p>
+                  Salt: {data.product.nutriments.salt_100g}{" "}
+                  {data.product.nutriments.salt_unit}
+                </p>
+              )}
+
+            {data.product.nutriments.sodium_100g !== undefined &&
+              data.product.nutriments.sodium_unit !== undefined && (
+                <p>
+                  Sodium: {data.product.nutriments.sodium_100g}{" "}
+                  {data.product.nutriments.sodium_unit}
+                </p>
+              )}
+
+            {/*<p className="font-bold">Ingredients:</p>
+            {data.product.ingredients_hierarchy &&
+            data.product.ingredients_hierarchy.length > 0 ? (
+              <p>
+                {data.product.ingredients_hierarchy.map((element) => {
+                  return <p>{element}</p>;
+                })}
+              </p>
+            ) : (
+              <p>No ingredients found</p>
+            )}*/}
           </div>
         )}
     </div>
