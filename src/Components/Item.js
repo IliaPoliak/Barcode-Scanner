@@ -42,78 +42,84 @@ const Item = () => {
 
       {error && !loading && !data && <div>Error: {error}</div>}
 
-      {!data && !loading && !error && <div>No data</div>}
+      {(!data || data.status_verbose === "product not found") &&
+        !loading &&
+        !error && <div>No data</div>}
 
-      {data && !loading && !error && (
-        <div>
-          <p>{data.product.brands}</p>
-          <p>{data.product.product_name}</p>
-          <p>
-            {data.product.product_quantity} {data.product.product_quantity_unit}
-          </p>
+      {data &&
+        data.status_verbose === "product found" &&
+        !loading &&
+        !error && (
+          <div>
+            <p>{data.product.brands}</p>
+            <p>{data.product.product_name}</p>
+            <p>
+              {data.product.product_quantity}{" "}
+              {data.product.product_quantity_unit}
+            </p>
 
-          <img src={data.product.image_url}></img>
+            <img src={data.product.image_url}></img>
 
-          <p className="font-bold">Nutriments per 100g</p>
-          <p>
-            Carbohydrates: {data.product.nutriments.carbohydrates_100g}{" "}
-            {data.product.nutriments.carbohydrates_unit}
-          </p>
-          <p>
-            Energy: {data.product.nutriments["energy-kcal_100g"]}{" "}
-            {data.product.nutriments["energy-kcal_unit"]}
-          </p>
-          <p>
-            Fat: {data.product.nutriments.fat_100g}{" "}
-            {data.product.nutriments.fat_unit}
-          </p>
-          <p>
-            Fiber: {data.product.nutriments.fiber_100g}{" "}
-            {data.product.nutriments.fiber_unit}
-          </p>
-          <p>
-            Proteins: {data.product.nutriments.proteins_100g}{" "}
-            {data.product.nutriments.proteins_unit}
-          </p>
-          <p>
-            Salt: {data.product.nutriments.salt_100g}{" "}
-            {data.product.nutriments.salt_unit}
-          </p>
-          <p>
-            Saturated Fat: {data.product.nutriments["saturated-fat_100g"]}{" "}
-            {data.product.nutriments["saturated-fat_unit"]}
-          </p>
-          <p>
-            Sodium: {data.product.nutriments.sodium_100g}{" "}
-            {data.product.nutriments.sodium_unit}
-          </p>
-          <p>
-            Sugars: {data.product.nutriments.sugars_100g}{" "}
-            {data.product.nutriments.sugars_unit}
-          </p>
+            <p className="font-bold">Nutriments per 100g</p>
+            <p>
+              Carbohydrates: {data.product.nutriments.carbohydrates_100g}{" "}
+              {data.product.nutriments.carbohydrates_unit}
+            </p>
+            <p>
+              Energy: {data.product.nutriments["energy-kcal_100g"]}{" "}
+              {data.product.nutriments["energy-kcal_unit"]}
+            </p>
+            <p>
+              Fat: {data.product.nutriments.fat_100g}{" "}
+              {data.product.nutriments.fat_unit}
+            </p>
+            <p>
+              Fiber: {data.product.nutriments.fiber_100g}{" "}
+              {data.product.nutriments.fiber_unit}
+            </p>
+            <p>
+              Proteins: {data.product.nutriments.proteins_100g}{" "}
+              {data.product.nutriments.proteins_unit}
+            </p>
+            <p>
+              Salt: {data.product.nutriments.salt_100g}{" "}
+              {data.product.nutriments.salt_unit}
+            </p>
+            <p>
+              Saturated Fat: {data.product.nutriments["saturated-fat_100g"]}{" "}
+              {data.product.nutriments["saturated-fat_unit"]}
+            </p>
+            <p>
+              Sodium: {data.product.nutriments.sodium_100g}{" "}
+              {data.product.nutriments.sodium_unit}
+            </p>
+            <p>
+              Sugars: {data.product.nutriments.sugars_100g}{" "}
+              {data.product.nutriments.sugars_unit}
+            </p>
 
-          <p className="font-bold">Ingredients:</p>
-          <p>
-            {data.product.ingredients_hierarchy.map((element) => {
-              return <p>{element}</p>;
-            })}
-          </p>
+            <p className="font-bold">Ingredients:</p>
+            <p>
+              {data.product.ingredients_hierarchy.map((element) => {
+                return <p>{element}</p>;
+              })}
+            </p>
 
-          <p className="font-bold">Alergens:</p>
-          <p>
-            {data.product.allergens_hierarchy.map((element) => {
-              return <p>{element}</p>;
-            })}
-          </p>
+            <p className="font-bold">Alergens:</p>
+            <p>
+              {data.product.allergens_hierarchy.map((element) => {
+                return <p>{element}</p>;
+              })}
+            </p>
 
-          <p className="font-bold">Tags:</p>
-          <p>
-            {data.product.ingredients_analysis_tags.map((element) => {
-              return <p>{element}</p>;
-            })}
-          </p>
-        </div>
-      )}
+            <p className="font-bold">Tags:</p>
+            <p>
+              {data.product.ingredients_analysis_tags.map((element) => {
+                return <p>{element}</p>;
+              })}
+            </p>
+          </div>
+        )}
     </div>
   );
 };
