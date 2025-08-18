@@ -62,10 +62,6 @@ const Item = () => {
 
             <p className="font-bold">Nutriments per 100g</p>
             <p>
-              Carbohydrates: {data.product.nutriments.carbohydrates_100g}{" "}
-              {data.product.nutriments.carbohydrates_unit}
-            </p>
-            <p>
               Energy: {data.product.nutriments["energy-kcal_100g"]}{" "}
               {data.product.nutriments["energy-kcal_unit"]}
             </p>
@@ -74,50 +70,69 @@ const Item = () => {
               {data.product.nutriments.fat_unit}
             </p>
             <p>
-              Fiber: {data.product.nutriments.fiber_100g}{" "}
-              {data.product.nutriments.fiber_unit}
+              Saturated Fat: {data.product.nutriments["saturated-fat_100g"]}{" "}
+              {data.product.nutriments["saturated-fat_unit"]}
+            </p>
+            <p>
+              Carbohydrates: {data.product.nutriments.carbohydrates_100g}{" "}
+              {data.product.nutriments.carbohydrates_unit}
+            </p>
+            <p>
+              Sugars: {data.product.nutriments.sugars_100g}{" "}
+              {data.product.nutriments.sugars_unit}
             </p>
             <p>
               Proteins: {data.product.nutriments.proteins_100g}{" "}
               {data.product.nutriments.proteins_unit}
             </p>
             <p>
-              Salt: {data.product.nutriments.salt_100g}{" "}
-              {data.product.nutriments.salt_unit}
+              Fiber: {data.product.nutriments.fiber_100g}{" "}
+              {data.product.nutriments.fiber_unit}
             </p>
             <p>
-              Saturated Fat: {data.product.nutriments["saturated-fat_100g"]}{" "}
-              {data.product.nutriments["saturated-fat_unit"]}
+              Salt: {data.product.nutriments.salt_100g}{" "}
+              {data.product.nutriments.salt_unit}
             </p>
             <p>
               Sodium: {data.product.nutriments.sodium_100g}{" "}
               {data.product.nutriments.sodium_unit}
             </p>
-            <p>
-              Sugars: {data.product.nutriments.sugars_100g}{" "}
-              {data.product.nutriments.sugars_unit}
-            </p>
 
             <p className="font-bold">Ingredients:</p>
-            <p>
-              {data.product.ingredients_hierarchy.map((element) => {
-                return <p>{element}</p>;
-              })}
-            </p>
+            {data.product.ingredients_hierarchy &&
+            data.product.ingredients_hierarchy.length > 0 ? (
+              <p>
+                {data.product.ingredients_hierarchy.map((element) => {
+                  return <p>{element}</p>;
+                })}
+              </p>
+            ) : (
+              <p>No ingredients found</p>
+            )}
 
             <p className="font-bold">Alergens:</p>
-            <p>
-              {data.product.allergens_hierarchy.map((element) => {
-                return <p>{element}</p>;
-              })}
-            </p>
+            {data.product.allergens_hierarchy &&
+            data.product.allergens_hierarchy.length > 0 ? (
+              <p>
+                {data.product.allergens_hierarchy.map((element) => {
+                  return <p>{element}</p>;
+                })}
+              </p>
+            ) : (
+              <p>No alergens found</p>
+            )}
 
             <p className="font-bold">Tags:</p>
-            <p>
-              {data.product.ingredients_analysis_tags.map((element) => {
-                return <p>{element}</p>;
-              })}
-            </p>
+            {data.product.ingredients_analysis_tags &&
+            data.product.ingredients_analysis_tags.length > 0 ? (
+              <p>
+                {data.product.ingredients_analysis_tags.map((element) => {
+                  return <p>{element}</p>;
+                })}
+              </p>
+            ) : (
+              <p>No tags found</p>
+            )}
           </div>
         )}
     </div>
