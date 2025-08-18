@@ -50,7 +50,7 @@ const Item = () => {
         data.status_verbose === "product found" &&
         !loading &&
         !error && (
-          <div>
+          <div className="flex items-center justify-center flex-col">
             <p>{data.product.brands}</p>
             <p>{data.product.product_name}</p>
             <p>
@@ -67,44 +67,80 @@ const Item = () => {
             <img src={data.product.image_url}></img>
 
             <p className="font-bold">
-              Nutriments per {data.product.nutrition_data_per}
+              Nutriments per {data.product.nutrition_data_prepared_per}
             </p>
-            <p>
-              Energy: {data.product.nutriments["energy-kcal_100g"]}{" "}
-              {data.product.nutriments["energy-kcal_unit"]}
-            </p>
-            <p>
-              Fat: {data.product.nutriments.fat_100g}{" "}
-              {data.product.nutriments.fat_unit}
-            </p>
-            <p>
-              Saturated Fat: {data.product.nutriments["saturated-fat_100g"]}{" "}
-              {data.product.nutriments["saturated-fat_unit"]}
-            </p>
-            <p>
-              Carbohydrates: {data.product.nutriments.carbohydrates_100g}{" "}
-              {data.product.nutriments.carbohydrates_unit}
-            </p>
-            <p>
-              Sugars: {data.product.nutriments.sugars_100g}{" "}
-              {data.product.nutriments.sugars_unit}
-            </p>
-            <p>
-              Proteins: {data.product.nutriments.proteins_100g}{" "}
-              {data.product.nutriments.proteins_unit}
-            </p>
-            <p>
-              Fiber: {data.product.nutriments.fiber_100g}{" "}
-              {data.product.nutriments.fiber_unit}
-            </p>
-            <p>
-              Salt: {data.product.nutriments.salt_100g}{" "}
-              {data.product.nutriments.salt_unit}
-            </p>
-            <p>
-              Sodium: {data.product.nutriments.sodium_100g}{" "}
-              {data.product.nutriments.sodium_unit}
-            </p>
+
+            {data.product.nutriments["energy-kcal_100g"] &&
+              data.product.nutriments["energy-kcal_unit"] && (
+                <p>
+                  Energy: {data.product.nutriments["energy-kcal_100g"]}{" "}
+                  {data.product.nutriments["energy-kcal_unit"]}
+                </p>
+              )}
+
+            {data.product.nutriments.fat_100g &&
+              data.product.nutriments.fat_unit && (
+                <p>
+                  Fat: {data.product.nutriments.fat_100g}{" "}
+                  {data.product.nutriments.fat_unit}
+                </p>
+              )}
+
+            {data.product.nutriments["saturated-fat_100g"] &&
+              data.product.nutriments["saturated-fat_unit"] && (
+                <p>
+                  Saturated Fat: {data.product.nutriments["saturated-fat_100g"]}{" "}
+                  {data.product.nutriments["saturated-fat_unit"]}
+                </p>
+              )}
+
+            {data.product.nutriments.carbohydrates_100g &&
+              data.product.nutriments.carbohydrates_unit && (
+                <p>
+                  Carbohydrates: {data.product.nutriments.carbohydrates_100g}{" "}
+                  {data.product.nutriments.carbohydrates_unit}
+                </p>
+              )}
+
+            {data.product.nutriments.sugars_100g &&
+              data.product.nutriments.sugars_unit && (
+                <p>
+                  Sugars: {data.product.nutriments.sugars_100g}{" "}
+                  {data.product.nutriments.sugars_unit}
+                </p>
+              )}
+
+            {data.product.nutriments.proteins_100g &&
+              data.product.nutriments.proteins_unit && (
+                <p>
+                  Proteins: {data.product.nutriments.proteins_100g}{" "}
+                  {data.product.nutriments.proteins_unit}
+                </p>
+              )}
+
+            {data.product.nutriments.fiber_100g &&
+              data.product.nutriments.fiber_unit && (
+                <p>
+                  Fiber: {data.product.nutriments.fiber_100g}{" "}
+                  {data.product.nutriments.fiber_unit}
+                </p>
+              )}
+
+            {data.product.nutriments.salt_100g &&
+              data.product.nutriments.salt_unit && (
+                <p>
+                  Salt: {data.product.nutriments.salt_100g}{" "}
+                  {data.product.nutriments.salt_unit}
+                </p>
+              )}
+
+            {data.product.nutriments.sodium_100g &&
+              data.product.nutriments.sodium_unit && (
+                <p>
+                  Sodium: {data.product.nutriments.sodium_100g}{" "}
+                  {data.product.nutriments.sodium_unit}
+                </p>
+              )}
 
             <p className="font-bold">Ingredients:</p>
             {data.product.ingredients_hierarchy &&
