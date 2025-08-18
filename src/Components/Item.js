@@ -104,11 +104,11 @@ const Item = () => {
               Nutriments per {data.product.nutrition_data_prepared_per}
             </p>
 
-            <div className="flex flex-col mb-10 mt-2 w-52">
+            <div className="flex flex-col mb-10 mt-2 w-52 border-t border-black">
               {/* Energy (kcal) */}
               {data.product.nutriments["energy-kcal_100g"] !== undefined &&
                 data.product.nutriments["energy-kcal_unit"] !== undefined && (
-                  <div className="flex justify-between border border-black px-2 py-1 even:bg-gray-300">
+                  <div className="flex justify-between border border-black border-t-0 px-2 py-1 even:bg-gray-300">
                     <div>Energy:</div>
                     <div>
                       {parseFloat(
@@ -122,7 +122,7 @@ const Item = () => {
               {/* Fat */}
               {data.product.nutriments.fat_100g !== undefined &&
                 data.product.nutriments.fat_unit !== undefined && (
-                  <div className="border-t-0 flex justify-between border border-black px-2 py-1 even:bg-gray-300">
+                  <div className="flex justify-between border border-black border-t-0 px-2 py-1 even:bg-gray-300">
                     <div>Fat:</div>
                     <div>
                       {parseFloat(data.product.nutriments.fat_100g.toFixed(1))}{" "}
@@ -134,7 +134,7 @@ const Item = () => {
               {/* Saturated Fat */}
               {data.product.nutriments["saturated-fat_100g"] !== undefined &&
                 data.product.nutriments["saturated-fat_unit"] !== undefined && (
-                  <div className="border-t-0 flex justify-between border border-black px-2 py-1 even:bg-gray-300">
+                  <div className="flex justify-between border border-black border-t-0 px-2 py-1 even:bg-gray-300">
                     <div>Saturated Fat:</div>
                     <div>
                       {parseFloat(
@@ -148,7 +148,7 @@ const Item = () => {
               {/* Carbohydrates */}
               {data.product.nutriments.carbohydrates_100g !== undefined &&
                 data.product.nutriments.carbohydrates_unit !== undefined && (
-                  <div className="border-t-0 flex justify-between border border-black px-2 py-1 even:bg-gray-300">
+                  <div className="flex justify-between border border-black border-t-0 px-2 py-1 even:bg-gray-300">
                     <div>Carbohydrates:</div>
                     <div>
                       {parseFloat(
@@ -162,7 +162,7 @@ const Item = () => {
               {/* Sugars */}
               {data.product.nutriments.sugars_100g !== undefined &&
                 data.product.nutriments.sugars_unit !== undefined && (
-                  <div className="border-t-0 flex justify-between border border-black px-2 py-1 even:bg-gray-300">
+                  <div className="flex justify-between border border-black border-t-0 px-2 py-1 even:bg-gray-300">
                     <div>Sugars:</div>
                     <div>
                       {parseFloat(
@@ -176,7 +176,7 @@ const Item = () => {
               {/* Proteins */}
               {data.product.nutriments.proteins_100g !== undefined &&
                 data.product.nutriments.proteins_unit !== undefined && (
-                  <div className="border-t-0 flex justify-between border border-black px-2 py-1 even:bg-gray-300">
+                  <div className="flex justify-between border border-black border-t-0 px-2 py-1 even:bg-gray-300">
                     <div>Proteins:</div>
                     <div>
                       {parseFloat(
@@ -190,7 +190,7 @@ const Item = () => {
               {/* Fiber */}
               {data.product.nutriments.fiber_100g !== undefined &&
                 data.product.nutriments.fiber_unit !== undefined && (
-                  <div className="border-t-0 flex justify-between border border-black px-2 py-1 even:bg-gray-300">
+                  <div className="flex justify-between border border-black border-t-0 px-2 py-1 even:bg-gray-300">
                     <div>Fiber:</div>
                     <div>
                       {parseFloat(
@@ -204,7 +204,7 @@ const Item = () => {
               {/* Salt */}
               {data.product.nutriments.salt_100g !== undefined &&
                 data.product.nutriments.salt_unit !== undefined && (
-                  <div className="border-t-0 flex justify-between border border-black px-2 py-1 even:bg-gray-300">
+                  <div className="flex justify-between border border-black border-t-0 px-2 py-1 even:bg-gray-300">
                     <div>Salt:</div>
                     <div>
                       {parseFloat(data.product.nutriments.salt_100g.toFixed(1))}{" "}
@@ -216,7 +216,7 @@ const Item = () => {
               {/* Sodium */}
               {data.product.nutriments.sodium_100g !== undefined &&
                 data.product.nutriments.sodium_unit !== undefined && (
-                  <div className="border-t-0 flex justify-between border border-black px-2 py-1 even:bg-gray-300">
+                  <div className="flex justify-between border border-black border-t-0 px-2 py-1 even:bg-gray-300">
                     <div>Sodium:</div>
                     <div>
                       {parseFloat(
