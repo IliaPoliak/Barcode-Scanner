@@ -29,6 +29,40 @@ const Item = () => {
     fetchData();
   }, []);
 
+  const validateAlergens = (alergen) => {
+    if (alergen.substring(0, 3) === "en:") {
+      return alergen.substring(3, 4).toUpperCase() + alergen.substring(4);
+    }
+
+    return alergen;
+  };
+
+  const validateTag = (tag) => {
+    if (tag.includes("palm-oil")) {
+      if (tag === "en:palm-oil-free") {
+        return <span className="text-green-500">Palm Oil Free</span>;
+      } else if (tag === "en:palm-oil-content-unknown") {
+        return <span className="text-black">Palm Oil Content Unknown</span>;
+      }
+    } else if (tag.includes("vegan")) {
+      if (tag === "en:vegan") {
+        return <span className="text-green-500">Vegan</span>;
+      } else if (tag === "en:non-vegan") {
+        return <span className="text-red-500">Non Vegan</span>;
+      } else if (tag === "en:vegan-status-unknown") {
+        return <span className="text-black">Vegan Status Unknown</span>;
+      }
+    } else if (tag.includes("vegetarian")) {
+      if (tag === "en:vegetarian") {
+        return <span className="text-green-500">Vegetarian</span>;
+      } else if (tag === "en:vegetarian-status-unknown") {
+        return <span className="text-black">Vegetarian Status Unknown</span>;
+      }
+    }
+
+    return <span className="text-gray-500">{tag}</span>;
+  };
+
   return (
     <div className="flex items-center justify-center flex-col text-center">
       <Link
@@ -73,7 +107,7 @@ const Item = () => {
             <img src={data.product.image_url}></img>
 
             {/* Alergens */}
-            <p className="font-bold mt-5">Alergens:</p>
+            <p className="font-bold mt-5 text-xl">Alergens:</p>
             {!data.product.allergens_hierarchy ? (
               <p>No data found</p>
             ) : data.product.allergens_hierarchy.length === 0 ? (
@@ -81,26 +115,26 @@ const Item = () => {
             ) : (
               <p>
                 {data.product.allergens_hierarchy.map((element) => {
-                  return <p>{element}</p>;
+                  return <p>{validateAlergens(element)}</p>;
                 })}
               </p>
             )}
 
             {/* Tags */}
-            <p className="font-bold mt-5">Tags:</p>
+            <p className="font-bold mt-5 text-xl">Tags:</p>
             {data.product.ingredients_analysis_tags &&
             data.product.ingredients_analysis_tags.length > 0 ? (
               <p>
                 {data.product.ingredients_analysis_tags.map((element) => {
-                  return <p>{element}</p>;
+                  return <p>{validateTag(element)}</p>;
                 })}
               </p>
             ) : (
-              <p>No tags found</p>
+              <p>No data found</p>
             )}
 
             {/* Nutriments */}
-            <p className="font-bold mt-5 text-lg">
+            <p className="font-bold mt-5 text-xl">
               Nutriments per {data.product.nutrition_data_prepared_per}
             </p>
 
