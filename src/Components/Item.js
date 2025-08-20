@@ -109,7 +109,8 @@ const Item = () => {
 
             {/* Quantity */}
             <p className="mb-2">
-              {data.product.product_quantity.toFixed(0)}{" "}
+              {data.product.product_quantity &&
+                Number(data.product.product_quantity).toFixed(0)}{" "}
               {data.product.product_quantity_unit}
             </p>
 
