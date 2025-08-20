@@ -34,19 +34,25 @@ const Item = () => {
       return alergen.substring(3, 4).toUpperCase() + alergen.substring(4);
     }
 
-    return alergen;
+    return alergen; // Default
   };
 
   const validateTag = (tag) => {
     if (tag.includes("palm-oil")) {
       if (tag === "en:palm-oil-free") {
         return <span className="text-green-500">Palm Oil Free</span>;
+      } else if (tag === "en:palm-oil") {
+        return <span className="text-red-500">Palm Oil</span>;
+      } else if (tag === "en:may-contain-palm-oil") {
+        return <span className="text-yellow-500">May Contain Palm Oil</span>;
       } else if (tag === "en:palm-oil-content-unknown") {
         return <span className="text-black">Palm Oil Content Unknown</span>;
       }
     } else if (tag.includes("vegan")) {
       if (tag === "en:vegan") {
         return <span className="text-green-500">Vegan</span>;
+      } else if (tag === "en:maybe-vegan") {
+        return <span className="text-yellow-500">Maybe Vegan</span>;
       } else if (tag === "en:non-vegan") {
         return <span className="text-red-500">Non Vegan</span>;
       } else if (tag === "en:vegan-status-unknown") {
@@ -57,10 +63,14 @@ const Item = () => {
         return <span className="text-green-500">Vegetarian</span>;
       } else if (tag === "en:vegetarian-status-unknown") {
         return <span className="text-black">Vegetarian Status Unknown</span>;
+      } else if (tag === "en:maybe-vegetarian") {
+        return <span className="text-yellow-500">Maybe Vegetarian</span>;
+      } else if (tag === "en:non-vegetarian") {
+        return <span className="text-red-500">Non Vegetarian</span>;
       }
     }
 
-    return <span className="text-gray-500">{tag}</span>;
+    return <span className="text-gray-500">{tag}</span>; // Default
   };
 
   return (
@@ -99,7 +109,7 @@ const Item = () => {
 
             {/* Quantity */}
             <p className="mb-2">
-              {data.product.product_quantity}{" "}
+              {data.product.product_quantity.toFixed(0)}{" "}
               {data.product.product_quantity_unit}
             </p>
 
