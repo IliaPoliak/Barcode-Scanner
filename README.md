@@ -4,6 +4,8 @@ A React web application that lets you scan product barcodes and fetch detailed n
 
 The app visually highlights important tags such as vegan, vegetarian, palm oil presence, and displays comprehensive nutritional values.
 
+[Try it by visiting this link.](https://food-barcode-scanner.vercel.app/)
+
 ---
 
 ## Features
