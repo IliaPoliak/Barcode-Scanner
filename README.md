@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# 📦 Food Barcode Scanner
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React web application that lets you scan product barcodes and fetch detailed nutritional, allergen, and dietary information using the [OpenFoodFacts API](https://world.openfoodfacts.org/).
 
-## Available Scripts
+The app visually highlights important tags such as vegan, vegetarian, palm oil presence, and displays comprehensive nutritional values.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Scan barcodes using your device camera.
+- Fetch product details from OpenFoodFacts API.
+- Display product name, brand, quantity, and image.
+- Show allergens and dietary tags with color-coded highlights:
+  - **Green**: Positive (Vegan, Palm Oil Free, Vegetarian)
+  - **Yellow**: Uncertain (Maybe Vegan, May Contain Palm Oil)
+  - **Red**: Negative (Non-Vegan, Contains Palm Oil)
+- Detailed nutritional information per 100g (energy, fat, sugar, protein, fiber, salt, etc.)
+- Seamless navigation between scanner and product pages.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- React Router
+- ZXing Barcode Scanner (`@zxing/library`)
+- Tailwind CSS (for styling)
+- OpenFoodFacts API
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Open the app in a browser.
+2. Allow camera access.
+3. Scan a barcode.
+4. View product information, allergens, tags, and nutritional data.
+5. Navigate back to scan another product.
