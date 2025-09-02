@@ -272,19 +272,6 @@ const Item = () => {
                   </div>
                 )}
             </div>
-
-            {/* Ingredients */}
-            {/*<p className="font-bold">Ingredients:</p>
-            {data.product.ingredients_hierarchy &&
-            data.product.ingredients_hierarchy.length > 0 ? (
-              <p>
-                {data.product.ingredients_hierarchy.map((element) => {
-                  return <p>{element}</p>;
-                })}
-              </p>
-            ) : (
-              <p>No ingredients found</p>
-            )}*/}
           </div>
         )}
     </div>
