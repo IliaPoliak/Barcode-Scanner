@@ -1,6 +1,6 @@
 # 📦 Food Barcode Scanner
 
-A React web application that lets you scan product barcodes and fetch detailed nutritional, allergen, and dietary information using the [OpenFoodFacts API](https://world.openfoodfacts.org/).
+A React web application that lets you scan product barcodes and fetch detailed nutritional, allergen, and dietary information using the OpenFoodFacts API.
 
 The app visually highlights important tags such as vegan, vegetarian, palm oil presence, and displays comprehensive nutritional values.
 
