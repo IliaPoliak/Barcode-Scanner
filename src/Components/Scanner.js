@@ -34,15 +34,13 @@ const Scanner = () => {
   }, [videoRef]);
 
   return (
-    <div className="fixed inset-0 flex items-end justify-center">
+    <div className="fixed inset-0 flex justify-center">
       <video
         className="absolute inset-0 w-full h-full object-cover"
         ref={videoRef}
       />
-      <Link
-        className="relative z-10 text-white bg-red-600 px-5 py-3 m-[5vh] rounded-3xl font-bold  hover:bg-red-700  active:shadow-2xl"
-        to="/"
-      >
+
+      <Link className="red-btn" to="/">
         Stop Scanning
       </Link>
     </div>

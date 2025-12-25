@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  /* buttons */
+  .general-btn {
+    @apply text-white fixed bottom-[3vh] z-20 px-5 py-3 rounded-3xl font-bold active:shadow-2xl;
+  }
+
+  .green-btn {
+    @apply general-btn bg-green-600 hover:bg-green-700;
+  }
+
+  .red-btn {
+    @apply general-btn bg-red-600 hover:bg-red-700;
+  }
+
+  /* item info */
+  .no-item-message {
+    @apply text-3xl font-bold pt-32;
+  }
+
+  .card-name {
+    @apply font-bold mt-5 mb-2 text-xl;
+  }
+
+  .hr {
+    @apply border-black w-52;
+  }
+
+  .card {
+    @apply bg-gray-300 w-52 rounded-b-lg pb-2 pt-1;
+  }
+
+  .nutriment {
+    @apply flex justify-between border border-black border-t-0 px-2 py-1 even:bg-gray-300;
+  }
+}
