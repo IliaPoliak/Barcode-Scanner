@@ -30,7 +30,7 @@
   }
 
   .card {
-    @apply bg-gray-300 w-52 rounded-b-lg pb-2 pt-1;
+    @apply bg-gray-300 w-52 rounded-b-lg py-2;
   }
 
   .nutriment {
